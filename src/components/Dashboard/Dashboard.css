@@ -97,6 +97,18 @@
   color: white;
 }
 
+.sidebar-btn.help-btn {
+  margin-top: 20px;
+  border-top: 2px solid #f0f0f0;
+  padding-top: 25px;
+  color: #10b981;
+}
+
+.sidebar-btn.help-btn:hover {
+  background: #ecfdf5;
+  color: #059669;
+}
+
 .dashboard-content {
   background: white;
   border-radius: 15px;

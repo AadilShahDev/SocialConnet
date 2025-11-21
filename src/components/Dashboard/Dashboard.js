@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 import Header from './Header';
 import AccountConnect from './AccountConnect';
 import PostComposer from './PostComposer';
@@ -9,6 +10,7 @@ import './Dashboard.css';
 
 function Dashboard({ user, onLogout, onUpdateUser }) {
   const [activeTab, setActiveTab] = useState('compose');
+  const navigate = useNavigate();
   const [connectedAccounts, setConnectedAccounts] = useState({
     twitter: { connected: false },
     linkedin: { connected: false }
@@ -63,6 +65,13 @@ function Dashboard({ user, onLogout, onUpdateUser }) {
           >
             <span className="icon">📊</span>
             Post History
+          </button>
+          <button 
+            className="sidebar-btn help-btn"
+            onClick={() => navigate('/guide')}
+          >
+            <span className="icon">📘</span>
+            Setup Guide
           </button>
         </div>
 

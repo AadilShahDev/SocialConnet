@@ -5,6 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Login from './components/Auth/Login';
 import Register from './components/Auth/Register';
 import Dashboard from './components/Dashboard/Dashboard';
+import TokenGuide from './components/Guide/TokenGuide';
 import axios from 'axios';
 
 // Configure axios defaults
@@ -80,6 +81,10 @@ function App() {
           <Route 
             path="/dashboard" 
             element={user ? <Dashboard user={user} onLogout={handleLogout} onUpdateUser={setUser} /> : <Navigate to="/login" />} 
+          />
+          <Route 
+            path="/guide" 
+            element={<TokenGuide />} 
           />
           <Route path="/" element={<Navigate to={user ? "/dashboard" : "/login"} />} />
         </Routes>
